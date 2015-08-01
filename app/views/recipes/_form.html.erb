@@ -19,7 +19,7 @@
       <br></br>
       <strong>Ingredients:</strong>
       <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cbi| %>
-        <% cbi.label(class: "checkbox-inline") {cbi.check_box(class: "checkbox") + cbi.text} %>
+        <% cbi.label(class: "checkbox-inline input_checkbox") {cbi.check_box(class: "checkbox") + cbi.text} %>
       <% end %>
       <br></br>      
       <span class="picture">
