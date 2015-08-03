@@ -40,7 +40,7 @@ What we need to do:
 - Restrict actions like create recipe, edit recipe and like feature to logged  in chefs only
 - Restrictin edit of recipes by chefs who created the recipes
 
-
+- Add Admin Functionality
 
 
 == README
