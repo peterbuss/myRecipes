@@ -5,6 +5,8 @@
     <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
     <p>
       <h5>Brought to you by: <%= @recipe.chef.chefname %></h5>
+      <br/>
+      <h5><%= link_to "Create Review", reviewnew_path(@recipe.id), class: "btn btn-success" %></h5>
     </p>
   </div>
   <div class="col-md-8">
@@ -42,3 +44,26 @@
 </div>
 
 <h5><%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-warning btn-small" %></h5>
+
+
+<div class="reviewbox">
+  <div class="row col-md-8">
+    <br/><br/>
+    <h4>Reviews for this recipe</h4>
+  </div>
+  
+  <% if @recipe.reviews.any? %>
+    <% @recipe.reviews.each do |review| %>
+      <div class="well col-md-6 review">
+        <%= review.review %>
+        <br/>
+        <div class="reviewer">
+          Reviewer:
+          <br/>
+          <%= review.chef_name %>
+        </div>
+        <br/>
+      </div>
+    <% end %>
+  <% end %>
+</div>

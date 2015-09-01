@@ -13,6 +13,7 @@ class StylesController < ApplicationController
   end
   
   def create
+    #binding.pry
     @style = Style.new(style_params)
     if @style.save
       flash[:success] = "Style was created sucessfully"

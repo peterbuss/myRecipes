@@ -42,6 +42,19 @@ What we need to do:
 
 - Add Admin Functionality
 
+1. Migration to create reviews table, body, type = text_field, 2 foreign keys, reference chef_id, reference recipe_id
+2. You'll need to build the review model
+3. Create tests for the spec, and validatations to the review model
+4. Build the associations, has_many and belongs_to recipe- reviews , chefs - reviews
+5. Test ou associations in rails console
+ - recipe.reviews
+ - chef.reviews
+6. Create routes
+7. Authenticated chefs can create reviews, before_action require_user
+8. Associate chef_id and recipe_id
+9. Use existing code if possible 
+10. Create using a git branch version
+
 
 == README
 

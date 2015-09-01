@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803210527) do
+ActiveRecord::Schema.define(version: 20150824221215) do
 
   create_table "chefs", force: :cascade do |t|
     t.string   "chefname"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 20150803210527) do
     t.integer "recipe_id"
   end
 
+  create_table "recipe_reviews", force: :cascade do |t|
+    t.integer "review_id"
+    t.integer "recipe_id"
+  end
+
   create_table "recipe_styles", force: :cascade do |t|
     t.integer "style_id"
     t.integer "recipe_id"
@@ -52,6 +57,14 @@ ActiveRecord::Schema.define(version: 20150803210527) do
     t.datetime "updated_at"
     t.integer  "chef_id"
     t.string   "picture"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "review"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "chef_name"
   end
 
   create_table "styles", force: :cascade do |t|

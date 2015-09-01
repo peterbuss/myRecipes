@@ -12,6 +12,7 @@ class IngredientsController < ApplicationController
   end
   
   def create
+    #binding.pry
     @ingredient = Ingredient.new(ing_params)
     if @ingredient.save
       flash[:success] = "Ingredient was created successfully"

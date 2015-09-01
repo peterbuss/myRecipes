@@ -1,0 +1,21 @@
+<%= render 'shared/page_title', title: "Write a review for this recipe" %>
+
+<%= render 'shared/errors', obj: @review %>
+
+
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @review do |f| %>
+      <%= f.label :review %>
+
+      <%= f.text_area :review , rows: 5 %>
+	    <strong>Recipe:   </strong>
+	    <%= Recipe.find_by(params[:id]).name %><br />
+	    <%= f.label :id %>:
+      <%= f.text_field :id, size: 2, class: 'form-control', autofocus: true, :value => params[:id] %><br />      
+      
+      <%= f.submit "Create Review ", class: "btn btn-success" %>
+    <% end %>  
+  </div>
+</div>
